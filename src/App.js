@@ -1,5 +1,6 @@
 
 import './App.scss';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
@@ -7,16 +8,15 @@ export default function App() {
     <section className='pagina-inicial'>
 
 <div className="secao-0">
-                   <img src="/public/assets/images/logo.png">
-                    </img>
+                   <img src="/public/assets/images/logo.png" alt="" />
                 
-                   <a href="#">Entrar</a>
+         <Link to='/Login'> Login </Link>
                  
      </div>
     <div className="secao-01">
       <div className="conteiner-imagem">
-        <img src="/public/assets/images/capa.png">
-        </img>
+        <img src="/public/assets/images/capa.png"alt="" />
+       
       </div>
       <div className="conteiner-texto">
         <h3>Lançamento</h3>
