@@ -8,7 +8,7 @@ export default function App() {
     <section className='pagina-inicial'>
 
 <div className="secao-0">
-                   <img src="/public/assets/images/logo.png" alt="" />
+                   <img src="/public/assets/images/logo.png"alt="" />
                 
          <Link to='/Login'> Login </Link>
                  
@@ -36,17 +36,17 @@ export default function App() {
        </div>
     <div className="secao-03">    
         <div className="conteiner-01">  
-            <img src="/public/assets/images/macacao.png" alt="logo" ></img>
+            <img src="/public/assets/images/macacao.png" alt="mulher vestida de macacao" ></img>
             <p>Macacão jeans Sabrina</p>
             <p>R$: 350,00</p>
         </div>
         <div className="conteiner-02">
-            <img src="/public/assets/images/conjunto.png" alt="Girl in a jacket" width="190" height="276"></img>
+            <img src="/public/assets/images/conjunto.png" alt="mulher vestida de conjunto" width="190" height="276"></img>
             <p>Conjunto Camila</p>
             <p>R$: 200,00</p>
         </div>
               <div className="conteiner-03">
-                 <img src="/public/assets/images/jaqueta.png" alt="logo" ></img>
+                 <img src="/public/assets/images/jaqueta.png" alt="homem vestido de jaqueta" ></img>
                    <p>Jaqueta  Básica</p>
                     <p>R$: 150,00</p>
          </div>
