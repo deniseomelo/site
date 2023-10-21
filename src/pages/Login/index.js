@@ -1,5 +1,5 @@
 
-import './App.scss';
+import './index.scss';
 import { Link } from 'react-router-dom';
 
 export default function App() {
@@ -8,14 +8,14 @@ export default function App() {
     <section className='pagina-inicial'>
 
 <div className="secao-0">
-                   <img src="/public/assets/images/logo.png"alt="" />
+                   <img src="./assets/images/logo.png"alt="" />
                 
          <Link to='/Login'> Login </Link>
                  
      </div>
     <div className="secao-01">
       <div className="conteiner-imagem">
-        <img src="/public/assets/images/capa.png"alt="" />
+        <img src="./assets/images/capa.png"alt="" />
        
       </div>
       <div className="conteiner-texto">
@@ -36,17 +36,17 @@ export default function App() {
        </div>
     <div className="secao-03">    
         <div className="conteiner-01">  
-            <img src="/public/assets/images/macacao.png" alt="mulher vestida de macacao" ></img>
+            <img src="./assets/images/macacao.png" alt="mulher vestida de macacao" ></img>
             <p>Macacão jeans Sabrina</p>
             <p>R$: 350,00</p>
         </div>
         <div className="conteiner-02">
-            <img src="/public/assets/images/conjunto.png" alt="mulher vestida de conjunto" width="190" height="276"></img>
+            <img src="./assets/images/conjunto.png" alt="mulher vestida de conjunto" width="190" height="276"></img>
             <p>Conjunto Camila</p>
             <p>R$: 200,00</p>
         </div>
               <div className="conteiner-03">
-                 <img src="/public/assets/images/jaqueta.png" alt="homem vestido de jaqueta" ></img>
+                 <img src="./assets/images/jaqueta.png" alt="homem vestido de jaqueta" ></img>
                    <p>Jaqueta  Básica</p>
                     <p>R$: 150,00</p>
          </div>
