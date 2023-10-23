@@ -8,6 +8,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import App from './pages/Home';
 import Login from './pages/Login';
+import Menu from './pages/Menu';
+import CadastroProduto from './pages/CadastroProduto';
+import VisualizarProduto from './pages/VisualizarProduto';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +22,9 @@ root.render(
         
         <Route path='/' element={< App/>} />
         <Route path='/Login' element={< Login/>} />
+        <Route path='/Menu' element={<Menu/>}/>
+        <Route path='/Cadastro-produto' element={<CadastroProduto/>}/>
+        <Route path='/Vizualizar-produto' element={<VisualizarProduto/>}/>
         
       </Routes>
     </BrowserRouter>
