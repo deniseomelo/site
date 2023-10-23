@@ -35,11 +35,13 @@ export default function CadastroProduto(){
                     <input type="file" id="foto" name="foto" accept="image/*" required/>
                 </div>
                 <div className="form-group">
-                    <button type="button" id="cadastrar">Cadastrar</button>
+                    <button type="button" id="cadastrar">Cadastrar</button>     
                 </div>
+                <Link to='/Menu' className="link-voltar">Voltar para página Menu</Link>
             </form>
+            
         </div>
- 
+        
        </section>
 
     );

@@ -23,8 +23,8 @@ root.render(
         <Route path='/' element={< App/>} />
         <Route path='/Login' element={< Login/>} />
         <Route path='/Menu' element={<Menu/>}/>
-        <Route path='/Cadastro-produto' element={<CadastroProduto/>}/>
-        <Route path='/Vizualizar-produto' element={<VisualizarProduto/>}/>
+        <Route path='/Cadastro-Produto' element={<CadastroProduto/>}/>
+        <Route path='/Visualizar-Produto' element={<VisualizarProduto/>}/>
         
       </Routes>
     </BrowserRouter>

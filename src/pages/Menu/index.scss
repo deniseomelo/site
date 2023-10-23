@@ -66,6 +66,18 @@ $colorBg: #f8f7f7;
     box-shadow: 0 8px 15px rgba(0,0,0,.2) ;
 
 }
+
+
+    .link-voltar {
+        display: inline-block;
+               margin-bottom: 20px;
+               margin-top: 50px;
+               font-size: 15px;
+               color: #555;
+               transition: all linear 160ms;
+               text-decoration: none;
+               text-align: right;
+}
 @media (max-width: 600px) {
 
     .page{
