@@ -17,6 +17,8 @@ $colorBg: #f8f7f7;
 
          img{
            height: 70px;
+           margin-top: 50px;
+           margin-left: 30px;
            
         }
    
@@ -147,12 +149,18 @@ $colorBg: #f8f7f7;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-bottom: 50px;
+
 }
 
 
 @media (max-width: 768px) {
   
-
+  .pagina-inicial .secao-0{
+    img{
+        height: 40px;
+    }
+}
   
   .secao-01 img{
     height: 220px;
@@ -195,7 +203,12 @@ $colorBg: #f8f7f7;
 }
 
 @media (max-width: 600px) {
- 
+
+ .pagina-inicial .secao-0{
+      img{
+          height: 40px;
+      }
+ }
   .secao-01 {
          img{
     height: 150px;
