@@ -28,7 +28,22 @@ export default function VisualizarProduto() {
       console.error('Erro ao buscar produtos:', error);
     }
   };
-  
+
+  async function excluirProduto(id) {
+    console.log('Excluir produto acionado. ID:', id);
+    try {
+      const response = await axios.delete(`http://localhost:5000/produto/${id}`);
+      if (response.status === 204) {
+        
+       
+  // Exclusão bem-sucedida
+        alert('Produto apagado!');
+        buscarProdutos(); // Atualize a lista de produtos
+      }
+    } catch (error) {
+      console.error('Erro ao excluir o produto:', error);
+    }
+  }
   useEffect(() => {
     buscarProdutos();
   }, []); // Quando a tela carregar
@@ -69,7 +84,9 @@ export default function VisualizarProduto() {
                 <strong>Descrição:</strong> {produto.descricao}
               </p>
               <button className="editar-button">Editar</button>
-              <button className="deletar-button">Excluir</button>
+              <button onClick={() => excluirProduto(produto.id)} className="deletar-button">
+  Excluir
+</button>
             </div>
           ))}
         </div>
