@@ -1,47 +1,82 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import './index.scss';
+import axios from 'axios';
 
 
-export default function VisualizarProduto(){
-    return(
-       <section className='pagina-VisualizarProduto'>
-        
-        <img src="./assets/images/logo.png" alt="logo"/>
 
-         <div className="page">
-            <h1>Buscar Produtos</h1>
-  <div className="buscar-barra">
-    <input type="text" placeholder="Buscar Produto"/>
-    <button>Buscar</button>
-  </div>
-  <div className="produto-lista">
-    <div className="produto">
-      <img src="./assets/images/macacao.png" alt="Produto-1"/>
-      
-      <p><strong>Código:</strong> 1</p>
-      <p><strong>Categoria:</strong> Feminino</p>
-      <p><strong>Tamanho:</strong> M</p>
-      <p><strong>Preco:</strong> R$200.99</p>
-      <p><strong>Descrição:</strong> Macação Sabrina.</p>
-      <button className="editar-button">Editar</button>
-      <button className="deletar-button">Apagar</button>
-    </div>
-    <div className="produto">
-      <img src="./assets/images/jaqueta.png" alt="Product 2"/>
-      <p><strong>Codigo:</strong> 6</p>
-      <p><strong>Categoria:</strong> Maculino</p>
-      <p><strong>Tamanho:</strong> G</p>
-      <p><strong>Preco:</strong> R$300.99</p>
-      <p><strong>Descrição:</strong> Jaqueta Básica.</p>
-      <button className="editar-button">Editar</button>
-      <button className="deletar-button">Excluir</button>
-      
-    </div>
-  </div>
-  <Link to='/Menu' className="link-voltar">Voltar para página Menu</Link>
-</div>  
+export default function VisualizarProduto() {
+  const [listaProdutos, setListaProdutos] = useState([]);
+  const [termoBusca, setTermoBusca] = useState('');
+
+  const buscarProdutos = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/produto'); // Verifique a URL
+      const produtos = response.data;
+  
+      if (termoBusca) {
+        // Filtra os produtos com base na descrição
+        const produtosFiltrados = produtos.filter((produto) =>
+          produto.descricao.toLowerCase().includes(termoBusca.toLowerCase())
+        );
+        setListaProdutos(produtosFiltrados);
+      } else {
+        setListaProdutos(produtos);
+      }
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+    }
+  };
+  
+  useEffect(() => {
+    buscarProdutos();
+  }, []); // Quando a tela carregar
+
+  
+
+  return (
+    <section className="pagina-VisualizarProduto">
+      <img src="./assets/images/logo.png" alt="logo" />
+      <div className="page">
+        <h1>Buscar Produtos</h1>
+        <div className="buscar-barra">
+          <input
+            type="text"
+            placeholder="Buscar Por Descrição"
+            value={termoBusca}
+            onChange={(e) => setTermoBusca(e.target.value)}
+          />
+          <button onClick={buscarProdutos}>Buscar</button>
+        </div>
+        <div className="produto-lista">
+          {listaProdutos.map((produto) => (
+            <div className="produto" key={produto.id}>
+              <img src={produto.imagem} alt={`Produto-${produto.id}`} />
+              <p>
+                <strong>Código:</strong> {produto.codigo}
+              </p>
+              <p>
+                <strong>Categoria:</strong> {produto.categoria}
+              </p>
+              <p>
+                <strong>Tamanho:</strong> {produto.tamanho}
+              </p>
+              <p>
+                <strong>Preço:</strong> R${produto.preco}
+              </p>
+              <p>
+                <strong>Descrição:</strong> {produto.descricao}
+              </p>
+              <button className="editar-button">Editar</button>
+              <button className="deletar-button">Excluir</button>
+            </div>
+          ))}
+        </div>
+        <Link to="/Menu" className="link-voltar">
+          Voltar para página Menu
+        </Link>
+      </div>
     </section>
-
-
-    );
+  );
 }
