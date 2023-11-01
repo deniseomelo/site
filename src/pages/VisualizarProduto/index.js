@@ -30,16 +30,12 @@ export default function VisualizarProduto() {
   };
 
   async function excluirProduto(id) {
-    console.log('Excluir produto acionado. ID:', id);
+    console.log('Excluindo produto com ID:', id);
     try {
-      const response = await axios.delete(`http://localhost:5000/produto/${id}`);
-      if (response.status === 204) {
-        
-       
-  // Exclusão bem-sucedida
-        alert('Produto apagado!');
-        buscarProdutos(); // Atualize a lista de produtos
-      }
+      let r = await axios.delete('http://localhost:5000/produto/' + id);
+      console.log('Resposta da exclusão:', r);
+      alert('Produto apagado!');
+      buscarProdutos();
     } catch (error) {
       console.error('Erro ao excluir o produto:', error);
     }
