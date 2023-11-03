@@ -29,12 +29,12 @@ export default function VisualizarProduto() {
     }
   };
 
-  async function excluirProduto(id) {
-    console.log('Excluindo produto com ID:', id);
+  async function remover(codigo) {
+    console.log('Excluindo produto com ID:', codigo);
     try {
-      let r = await axios.delete('http://localhost:5000/produto/' + id);
+      let r = await axios.delete(`http://localhost:5000/produto/${codigo}`); // Adicione uma barra (/) entre "produto" e o ID
       console.log('Resposta da exclusão:', r);
-      alert('Produto apagado!');
+      alert('Produto Apagado!');
       buscarProdutos();
     } catch (error) {
       console.error('Erro ao excluir o produto:', error);
@@ -79,10 +79,9 @@ export default function VisualizarProduto() {
               <p>
                 <strong>Descrição:</strong> {produto.descricao}
               </p>
-              <button className="editar-button">Editar</button>
-              <button onClick={() => excluirProduto(produto.id)} className="deletar-button">
-  Excluir
-</button>
+              <button >Editar</button>
+              <button onClick={() => remover(produto.codigo)} className="deletar-button">Excluir</button>
+
             </div>
           ))}
         </div>

@@ -28,6 +28,7 @@ root.render(
         <Route path='/Visualizar-Produto' element={<VisualizarProduto/>}/>
         <Route path='/*' element={<NaoEncontrado />} />
         
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

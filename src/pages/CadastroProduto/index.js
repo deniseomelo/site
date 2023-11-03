@@ -24,7 +24,7 @@ import './index.scss';
       try {
         const response = await axios.post('http://localhost:5000/produto/', body);
         const id = response.data.id;
-        alert('Produto cadastrado. Id ' + id);
+        alert('Produto cadastrado. Códido:  ' + id);
       } catch (error) {
         console.error('Erro ao cadastrar produto:', error);
       }
