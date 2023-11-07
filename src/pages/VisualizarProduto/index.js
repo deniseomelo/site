@@ -41,6 +41,8 @@ export default function VisualizarProduto() {
     }
   }
 
+
+
   useEffect(() => {
     buscarProdutos();
   }, []); // Quando a tela carregar
@@ -80,7 +82,7 @@ export default function VisualizarProduto() {
               <p>
                 <strong>Descrição:</strong> {produto.descricao}
               </p>
-              <button >Editar</button>
+              <button className="editar-button">Editar</button>
               <button onClick={() => remover(produto.codigo)} className="deletar-button">Excluir</button>
 
             </div>
