@@ -1,5 +1,5 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './index.scss';
 import axios from 'axios';
@@ -9,6 +9,8 @@ import axios from 'axios';
 export default function VisualizarProduto() {
   const [listaProdutos, setListaProdutos] = useState([]);
   const [termoBusca, setTermoBusca] = useState('');
+  
+  
 
   const buscarProdutos = async () => {
     try {
@@ -41,13 +43,11 @@ export default function VisualizarProduto() {
     }
   }
 
-
-
   useEffect(() => {
     buscarProdutos();
   }, []); // Quando a tela carregar
 
-  
+
 
   return (
     <section className="pagina-VisualizarProduto">
@@ -82,7 +82,7 @@ export default function VisualizarProduto() {
               <p>
                 <strong>Descrição:</strong> {produto.descricao}
               </p>
-              <button className="editar-button">Editar</button>
+              <Link to={`/editar-produto/${produto.codigo}`} className="editar-button">Editar</Link>
               <button onClick={() => remover(produto.codigo)} className="deletar-button">Excluir</button>
 
             </div>

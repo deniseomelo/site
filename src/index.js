@@ -12,6 +12,7 @@ import Menu from './pages/Menu';
 import CadastroProduto from './pages/CadastroProduto';
 import VisualizarProduto from './pages/VisualizarProduto';
 import NaoEncontrado from './pages/NaoEncontrado';
+import EditarProduto from './component/EditarProduto';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,7 +28,9 @@ root.render(
         <Route path='/Cadastro-Produto' element={<CadastroProduto/>}/>
         <Route path='/Visualizar-Produto' element={<VisualizarProduto/>}/>
         <Route path='/*' element={<NaoEncontrado />} />
-        
+
+        <Route path="/editar-produto/:codigo" component={EditarProduto} />
+
         
       </Routes>
     </BrowserRouter>
