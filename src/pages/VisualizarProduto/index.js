@@ -34,12 +34,13 @@ export default function VisualizarProduto() {
     try {
       let r = await axios.delete(`http://localhost:5000/produto/${codigo}`); // Adicione uma barra (/) entre "produto" e o ID
       console.log('Resposta da exclusão:', r);
-      alert('Produto Apagado!');
+      alert('Deseja Realmente Apagar?');
       buscarProdutos();
     } catch (error) {
       console.error('Erro ao excluir o produto:', error);
     }
   }
+
   useEffect(() => {
     buscarProdutos();
   }, []); // Quando a tela carregar
