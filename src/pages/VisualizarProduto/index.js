@@ -64,7 +64,7 @@ export default function VisualizarProduto() {
           <button onClick={buscarProdutos}>Buscar</button>
         </div>
         <div className="produto-lista">
-          {listaProdutos.map((produto) => (
+        {listaProdutos.map((produto) => (
             <div className="produto" key={produto.id}>
               <img src={produto.imagem} alt={`Produto-${produto.id}`} />
               <p>

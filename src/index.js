@@ -12,7 +12,7 @@ import Menu from './pages/Menu';
 import CadastroProduto from './pages/CadastroProduto';
 import VisualizarProduto from './pages/VisualizarProduto';
 import NaoEncontrado from './pages/NaoEncontrado';
-import EditarProduto from './component/EditarProduto';
+import EditarProduto from './component/EditarProduto/index';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,7 +29,7 @@ root.render(
         <Route path='/Visualizar-Produto' element={<VisualizarProduto/>}/>
         <Route path='/*' element={<NaoEncontrado />} />
 
-        <Route path="/editar-produto/:codigo" component={EditarProduto} />
+        <Route path="/editar-produto/:codigo" element={<EditarProduto />} />
 
         
       </Routes>
