@@ -86,18 +86,10 @@
     margin-bottom: 10px;
   }
   
-  .editar-button,
-  .deletar-button {
-    text-align: center;
-    padding: 5px 10px;
-    margin: 5px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
   
+    
   
+
   .editar-button:hover,
   .deletar-button:hover {
     box-shadow: 0 8px 15px rgba(0,0,0,.2) ;
@@ -109,10 +101,10 @@
     
   }
   
-  .editar-button{
+   .editar-button{
   
-   
     margin: 5px;
+    padding: 3px 10px !important;
     background-color: rgb(0, 255, 106);
     color: white;
     border: none;
@@ -123,7 +115,7 @@
   }
   
   .deletar-button {
-    padding: 5px 10px;
+    padding:5px 10px;
     margin: 5px;
     background-color: #eb0808e1;
     color: white;

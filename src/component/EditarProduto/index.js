@@ -12,11 +12,7 @@ export default function EditarProduto({ match }) {
   });
 
   useEffect(() => {
-    // Verifique se match e match.params estão definidos antes de acessá-los
     const codigo = match?.params?.codigo;
-  
-    // Adicione este console.log para verificar o valor de código
-    console.log('Código do produto:', codigo);
   
     if (codigo) {
       async function fetchData() {
@@ -34,9 +30,9 @@ export default function EditarProduto({ match }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
+    console.log('Função handleSubmit está sendo chamada.');
     try {
-      // Use match.params.codigo para obter o código do produto
       await axios.put(`http://localhost:5000/produto/${match.params.codigo}`, produto);
       console.log('Produto atualizado com sucesso');
     } catch (error) {
@@ -46,10 +42,10 @@ export default function EditarProduto({ match }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setProduto({
-      ...produto,
+    setProduto((prevProduto) => ({
+      ...prevProduto,
       [name]: value,
-    });
+    }));
   };
 
   return (
