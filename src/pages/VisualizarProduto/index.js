@@ -67,9 +67,7 @@ export default function VisualizarProduto() {
         {listaProdutos.map((produto) => (
             <div className="produto" key={produto.id}>
               <img src={produto.imagem} alt={`Produto-${produto.id}`} />
-              <p>
-                <strong>Código:</strong> {produto.codigo}
-              </p>
+              
               <p>
                 <strong>Categoria:</strong> {produto.categoria}
               </p>

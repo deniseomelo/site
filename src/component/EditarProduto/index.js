@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './index.scss';
+import { useParams } from 'react-router-dom';
 
-export default function EditarProduto({ match }) {
+
+export default function EditarProduto() {
   const [produto, setProduto] = useState({
     codigo: '',
     categoria: '',
@@ -11,9 +13,11 @@ export default function EditarProduto({ match }) {
     descricao: '',
   });
 
+
+  const { codigo } = useParams();
+
+
   useEffect(() => {
-    const codigo = match?.params?.codigo;
-  
     if (codigo) {
       async function fetchData() {
         try {
@@ -26,15 +30,15 @@ export default function EditarProduto({ match }) {
   
       fetchData();
     }
-  }, [match]);
+  }, [codigo]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
   
     console.log('Função handleSubmit está sendo chamada.');
     try {
-      await axios.put(`http://localhost:5000/produto/${match.params.codigo}`, produto);
-      console.log('Produto atualizado com sucesso');
+      await axios.put(`http://localhost:5000/produto/${codigo}`, produto);
+      alert('Produto atualizado com sucesso');
     } catch (error) {
       console.error('Erro ao atualizar o produto:', error);
     }
@@ -55,13 +59,6 @@ export default function EditarProduto({ match }) {
         <div className="page-edicao">
       <form className=" formulario"onSubmit={handleSubmit}>
         <div className='form-group'>
-          <label>Código</label>
-          <input 
-          type="text" 
-          name="codigo" 
-          value={produto.codigo} 
-          onChange={handleChange} />
-        
           <label>Categoria</label>
           <input 
           type="text" 
@@ -91,6 +88,7 @@ export default function EditarProduto({ match }) {
         <button type="submit">Atualizar Produto</button>
       </form>
       </div>
+      
     </section>
    
   );

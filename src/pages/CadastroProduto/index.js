@@ -36,17 +36,7 @@ import './index.scss';
         <div className="page-cadastro">
           <form id="cadastroForm" encType="multipart/form-data">
             <h1 className="titulo">Cadastro de Produtos</h1>
-            <div className="form-group">
-              <label htmlFor="codigo">Código do Produto:</label>
-              <input
-                type="text"
-                id="codigo"
-                name="codigo"
-                value={codigo}
-                onChange={(e) => setCodigo(e.target.value)}
-                required
-              />
-            </div>
+              
             <div className="form-group">
               <label htmlFor="categoria">Categoria:</label>
               <input

@@ -27,9 +27,12 @@ root.render(
         <Route path='/Menu' element={<Menu/>}/>
         <Route path='/Cadastro-Produto' element={<CadastroProduto/>}/>
         <Route path='/Visualizar-Produto' element={<VisualizarProduto/>}/>
+        <Route path="/editar-produto/:codigo" element={<EditarProduto />} />
+        
+        
         <Route path='/*' element={<NaoEncontrado />} />
 
-        <Route path="/editar-produto/:codigo" element={<EditarProduto />} />
+        
 
         
       </Routes>
