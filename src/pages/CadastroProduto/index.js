@@ -6,7 +6,7 @@ import './index.scss';
 
 
     export default function CadastroProduto() {
-    const [codigo, setCodigo] = useState('');
+    
     const [categoria, setCategoria] = useState('');
     const [tamanho, setTamanho] = useState('');
     const [preco, setPreco] = useState('');
@@ -14,7 +14,6 @@ import './index.scss';
   
     async function salvarProduto() {
       const body = {
-        codigo,
         categoria,
         tamanho,
         preco,
